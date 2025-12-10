@@ -105,7 +105,7 @@ class AIME25Benchmark(BaseBenchmark):
                 all_instances.append(instance)
 
             # Generate model responses
-            self.logger.info("Generating responses for AIME25...")
+            self.logger.info(f"Generating responses for AIME25 - repetition {i + 1}/{self.n_repeat}")
             outputs = self.compute(model, all_instances)
             all_outputs.append(outputs)
         # Return None early for non-primary ranks
@@ -157,6 +157,12 @@ class AIME25Benchmark(BaseBenchmark):
                 "num_repeat": self.n_repeat,
             }
         )
+        
+        print("AIME25 Evaluation Results:")
+        print(f"Solved Average: {solved_avg}")
+        print(f"Accuracy Average: {accuracy_avg:.4f}")
+        print(f"Accuracy Std Dev: {accuracy_std:.4f}")
+        print(f"Accuracy Std Error: {accuracy_std_err:.4f}")
 
         return results
 

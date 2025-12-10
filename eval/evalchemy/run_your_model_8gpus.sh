@@ -8,8 +8,8 @@ mkdir -p logs
 # export HF_HUB_CACHE=""
 
 MODELS=(
-  "agentica-org/DeepScaleR-1.5B-Preview"
   "agentica-org/DeepCoder-1.5B-Preview"
+  "agentica-org/DeepScaleR-1.5B-Preview"
 )
 
 UNIQUE_NAMES=()
@@ -29,8 +29,8 @@ EVAL_TASKS=(
 )
 TASKS_STR=$(IFS=, ; echo "${EVAL_TASKS[*]}")
 
-export CUDA_VISIBLE_DEVICES=0,1,2,3
-gpu_num=4
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+tp_size=4
 default_max_output_length=32768
 
 set -e
@@ -76,7 +76,7 @@ for i in "${!MODELS[@]}"; do
   python -m eval.eval \
     --model vllm \
     --tasks "${TASKS_STR}" \
-    --model_args "pretrained=${MODEL_PATH},tensor_parallel_size=${gpu_num},gpu_memory_utilization=0.85,dtype=bfloat16,max_model_len=${max_output_length}"  \
+    --model_args "pretrained=${MODEL_PATH},tensor_parallel_size=${tp_size},gpu_memory_utilization=0.85,dtype=bfloat16,max_model_len=${max_output_length}"  \
     --batch_size "$batch_size" \
     --output_path logs 2>&1 | tee "$log_file"
 

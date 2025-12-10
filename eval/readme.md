@@ -7,8 +7,8 @@ We use [EvalChemy](https://github.com/mlfoundations/evalchemy) and [lm-evaluatio
 **For EvalChemy:**
 ```bash
 cd eval/evalchemy
-conda create -n evalchemy
-conda activate evalchemy python=3.10
+conda create -n evalchemy python=3.10 -y
+conda activate evalchemy 
 pip install -e .
 pip install vllm==0.8.5
 ```

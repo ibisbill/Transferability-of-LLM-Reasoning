@@ -338,6 +338,10 @@ class LiveCodeBenchBenchmark(BaseBenchmark):
                 "num_repeat": self.n_repeat,
             }
         )
+        
+        print("LiveCodeBench Evaluation Results:")
+        print(f"Solved Average: {solved_avg}")
+        print(f"Accuracy Average: {mean_acc:.4f}")
 
         return final_metrics
 

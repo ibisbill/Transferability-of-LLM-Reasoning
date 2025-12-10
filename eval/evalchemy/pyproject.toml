@@ -82,7 +82,7 @@ dependencies = [
     "google-auth==2.25.1",
     "boto3",
     "botocore",
-    "sagemaker",
+    "sagemaker==2.75.1",
     "fsspec==2024.6.1",
     "hf-transfer",
     "huggingface_hub[cli]",
