@@ -2,12 +2,15 @@
 
 > 🎉 **Accepted at ICML 2026.**
 
+[![Project Page](https://img.shields.io/badge/🌐%20Project-Page-4c8bf5.svg)](https://ibisbill.github.io/Transferability-of-LLM-Reasoning/)
 [![arXiv](https://img.shields.io/badge/arXiv-2507.00432-b31b1b.svg)](https://arxiv.org/abs/2507.00432)
 [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Models-yellow)](https://huggingface.co/ReasoningTransferability)
 [![GitHub](https://img.shields.io/badge/GitHub-Code-blue)](https://github.com/ReasoningTransfer/Transferability-of-LLM-Reasoning)
 [![ICML 2026](https://img.shields.io/badge/ICML-2026-brightgreen.svg)](https://icml.cc/virtual/2026/poster/65125)
 
 **TL;DR**: Most models that succeed at math *fail* to transfer those gains to other domains. Through controlled experiments we find the decisive factor is not RL vs. SFT per se, but **on-policy vs. off-policy** fine-tuning: on-policy updates (whether the signal comes from RL or supervised learning) preserve—and even improve—general capabilities, while off-policy SFT on static distilled data induces catastrophic forgetting.
+
+📖 **Interactive summary with figures and formulas:** [ibisbill.github.io/Transferability-of-LLM-Reasoning](https://ibisbill.github.io/Transferability-of-LLM-Reasoning/)
 
 ## 🔍 Overview
 
